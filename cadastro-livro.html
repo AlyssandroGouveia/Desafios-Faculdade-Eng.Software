@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo Bibliografico</title>
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                <h1>Cadastro de Acervo Bibliográfico</h1>
+                <p>Cadastre os livros recomendados para as disciplinas</p>
+            </header>
+            <form action="/salvar-livro" method="post">
+                <!--Bloco 1: Informações da Obra -->
+                <fieldset>
+                    <legend>Informações de Obra</legend>
+                    <p>
+                        <label for="titulo">Título do Livro:</label>
+                        <input type="text" id="titulo" name="titulo" autocomplete="titulo" required>
+                    </p>
+
+                    <p>
+                        <label for="autor">Autor(es):</label>
+                        <input type="text" id="autor" name="autor" autocomplete="autor" required>
+                    </p>
+
+                    <p>
+                        <label for="isbn">ISBN( 13 Digitos ):</label>
+                        <input type="text" id="isbn" name="isbn" autocomplete="isbn" pattern="\d{13}" maxlength="13" placeholder="Digite os 13 Digitos" title="Digite os 13 Digitos" required>
+                    </p>
+
+                    <p>
+                        <label for="publicacao">Ano de Publicação:</label>
+                        <input type="text" id="publicacao" name="publicacao" autocomplete="publicacao" pattern="\d{4}" maxlength="4" placeholder="Exemplo: 1999" title="Digite 4 numeros" required>
+                    </p>
+
+                </fieldset>
+
+                <!--Bloco 2: Detalhes Acadêmicos -->
+                <fieldset>
+                    <legend>Detalhes Acadêmicos</legend>
+                    <p>
+                        <label for="curso">Curso Alvo:</label>
+                        <select id="curso" name="curso" autocomplete="curso" required>
+                            <option value="">Selecione o Curso Desejado</option>
+                            <option value="Engenharia de Software">Engenharia de Software</option>
+                            <option value="Analise e Desenvolvimento de Sistemas">Analise e Desenvolvimento de Sistemas</option>
+                            <option value="Tronco comun">Tronco comun</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="disciplina">Disciplina: </label>
+                        <input type="text" id="disciplina" name="disciplina" autocomplete="disciplina" required>
+                    </p>
+
+                    <p>
+                        <label for="formato">Formato: </label>
+                        
+                        <input type="radio" id="fisico" name="radio" autocomplete="fisico" required>
+                        <label for="fisico" >Fisico</label>                        
+                        
+                        <input type="radio" id="digital" name="radio" autocomplete="digital" required>
+                        <label for="digital">Digital</label>
+
+                        <input type="radio" id="ambos" name="radio" autocomplete="ambos" required>
+                        <label for="ambos">Ambos</label>
+                    </p>
+                    
+                </fieldset>
+
+                <button type="submit">Salvar Livro</button>
+
+            </form>
+        </section>
+    </main>    
+</body>
+</html>
+
+<!-- 
+<p>
+<label for=""></label>
+<input type="text" id="" name="" autocomplete="" required>
+</p> 
+-->
